@@ -8,7 +8,9 @@ on i.companyId = c.id
 innter join colors as co 
 on i.colorid = co.id;
 -------*Mostrar los últimos 10 items en general*-------
-select* from items limit 10;
+SELECT * FROM (
+SELECT * FROM items ORDER BY id DESC LIMIT 10)
+ORDER BY id ASC;
 
 -------*Mostrar los items que en el nombre terminen con la A*-------
 select* from items where name like '%a';
